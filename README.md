@@ -35,3 +35,22 @@ To run the application, simply open the `index.html` file in a web browser.
 
 ## Contributions
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please create an issue or submit a pull request.
+
+
+
+
+## Output Images:
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/cccdafd9-f3ef-436f-950a-ddc3c9b5d30e)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/55de8bd0-c62d-4e7e-8abd-5bfa49f8d654)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/7bd49b25-6a74-4a99-9f3f-ad307c119691)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/d72b5451-18ad-47f9-8d3a-3ff3381b375a)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/87930e79-5101-4456-abe5-32bf2d9833e1)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/9aac29d8-e41c-46dd-9e17-6efc229bc3a0)
+(https://github.com/anishbhargav9/FyleInternshipAssignment/assets/164538003/4ff682a8-2894-45d6-953e-86578cb77272)
+
+
+
+
+
+
+
