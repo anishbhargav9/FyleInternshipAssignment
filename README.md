@@ -125,6 +125,137 @@ index.html Code:
 
 
 
+$(document).ready(function() {
+    // Hide error icons by default
+    $('.error-icon').hide();
+
+    $('#taxForm').submit(function(event) {
+        event.preventDefault();
+
+        // Validate input fields
+        var grossIncome = $('#grossIncome').val();
+        var extraIncome = $('#extraIncome').val();
+        var ageGroup = $('#ageGroup').val();
+        var deductions = $('#deductions').val();
+
+        if (grossIncome == '') {
+            $('#grossIncomeError').show();
+            return;
+        } else {
+            $('#grossIncomeError').hide();
+        }
+
+        if (isNaN(extraIncome)) {
+            $('#extraIncomeError').show();
+            return;
+        } else {
+            $('#extraIncomeError').hide();
+        }
+
+        if (ageGroup == '') {
+            $('#ageGroupError').show();
+            return;
+        } else {
+            $('#ageGroupError').hide();
+        }
+
+        if (isNaN(deductions)) {
+            $('#deductionsError').show();
+            return;
+        } else {
+            $('#deductionsError').hide();
+        }
+
+        // Calculate tax
+        var overallIncome = parseInt(grossIncome) + parseInt(extraIncome) - parseInt(deductions);
+        var tax = 0;
+
+        if (overallIncome > 800000) {
+            if (ageGroup == '<40') {
+                tax = 0.3 * (overallIncome - 800000);
+            } else if (ageGroup == '>=40 but <60') {
+                tax = 0.4 * (overallIncome - 800000);
+            } else if (ageGroup == '>=60') {
+                tax = 0.1 * (overallIncome - 800000);
+            }
+        }
+
+        // Calculate overall income after deducting taxes
+        var overallIncomeAfterTax = overallIncome - tax;
+
+        // Display result in modal
+        var modalContent = "<p>Your Overall Income Will Be</p>";
+        modalContent += "<p>" + overallIncomeAfterTax.toLocaleString() + " INR</p>";
+        modalContent += "<p>After deducting all the taxes</p>";
+
+        $('#modalText').html(modalContent);
+        $('#resultModal').modal('show');
+    });
+});
+
+
+
+
+
+.error-icon {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    margin-top: 15px;
+    transform: translateY(-50%);
+    display: none;
+    cursor: pointer;
+}
+
+.form-group {
+    position: relative;
+}
+
+@media (max-width: 576px) {
+    .error-icon {
+        right: unset;
+        left: calc(100% - 25px);
+    }
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+}
+
+.tooltip-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tooltip-text {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+    z-index: 999;
+    top: -30px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-icon:hover .tooltip-text {
+    display: block;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+
+
+
 
 
 
